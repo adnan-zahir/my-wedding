@@ -78,6 +78,7 @@ const App = () => {
       (splittedPageUrl[2] && splittedPageUrl[2].replace('+', ' ')) ||
       'Nama Tamu';
     setGuestName(getGuestName);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
