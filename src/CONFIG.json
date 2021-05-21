@@ -1,3 +1,3 @@
 {
-  "API_BASE_URL": "http://my-wedding-db.herokuapp.com"
+  "API_BASE_URL": "https://my-wedding-db.herokuapp.com"
 }
