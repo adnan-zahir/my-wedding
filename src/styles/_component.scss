@@ -1,0 +1,232 @@
+// TABLE OF CONTENT
+// ----------------
+// 1. Navbar
+// 2. Welcome Card
+// 3. Slideshow
+// 4. Schedules
+// 5. Countdown
+// 6. Maps
+// 7. Gallery
+// 8. Wish Form
+// 8. a. Wish Card
+// ----------------
+
+// 1. Navbar
+.navbar {
+  $bg-color: $white;
+  $color: $mid-dark;
+  background-color: $bg-color;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+
+  &-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color;
+    padding: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: darken($bg-color, 10);
+    }
+
+    &.active {
+      background-color: darken($bg-color, 10);
+
+      span {
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      font-size: 0.75em;
+    }
+  }
+}
+
+// 2. Welcome Card
+.welcome-card {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: $neutral-light;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeOut 1s linear forwards;
+  z-index: 100;
+
+  &.show {
+    animation: fadeIn 1s linear forwards;
+  }
+
+  &__picture {
+    display: block;
+    margin: 1rem auto;
+    width: 10em;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+// 3. Slideshow
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  &-picture {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeOut 1s linear forwards;
+
+    &.active {
+      animation: fadeIn 1s linear forwards;
+    }
+  }
+}
+
+// 4. Schedules
+.schedules {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+// 5. Countdown
+.countdown {
+  display: flex;
+  margin: 1rem 0;
+  align-items: end;
+  justify-content: space-evenly;
+
+  &-item {
+    padding: 0.3em;
+
+    &:first-child {
+      span:first-child {
+        font-size: 2.5em;
+        color: $primary-red;
+      }
+    }
+
+    span {
+      display: block;
+
+      &:first-child {
+        font-size: 1.8em;
+      }
+    }
+  }
+}
+
+// 6. Maps
+.maps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-iframe {
+    width: clamp(20rem, 100%, 40rem);
+    margin-bottom: 1rem;
+  }
+}
+
+// 7. Gallery
+.react-photo-gallery--gallery {
+  img {
+    object-fit: cover;
+  }
+}
+
+// 8. Wish Form
+.quote-wish {
+  &__wish-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: clamp(10rem, 80%, 30rem);
+    margin: 0 auto;
+
+    .input-label {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
+      text-align: left;
+      align-items: center;
+
+      input,
+      textarea {
+        padding: 0.5rem 0.2rem;
+        margin-top: 0.2rem;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+  }
+}
+
+// 8. a. Wish Card
+.wishes-container {
+  display: flex;
+  width: clamp(10rem, 80%, 30rem);
+  margin: 0 auto;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 40rem;
+  gap: 0.5rem;
+  padding: 0.2rem;
+
+  .wish-card {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'name button'
+      'wish button';
+    align-items: center;
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    text-align: left;
+    background-color: $white;
+
+    &__name {
+      grid-area: name;
+      font-weight: bold;
+    }
+
+    &__text {
+      grid-area: wish;
+    }
+
+    button {
+      grid-area: button;
+      height: 100%;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
+}

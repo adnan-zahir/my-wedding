@@ -1,0 +1,471 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+section {
+  background-color: #f2f2f2;
+  position: relative;
+  color: #333333;
+  padding: 5rem 1rem;
+  text-align: center;
+  min-height: 100vh;
+}
+
+section.non-padded {
+  padding: 0;
+}
+
+section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid #ccaa00;
+  pointer-events: none;
+}
+
+section > p {
+  margin: 2em 0;
+}
+
+h4.italic {
+  font-family: 'Great Vibes', serif;
+  font-size: 1.8em;
+}
+
+button,
+.btn {
+  display: inline-block;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #333333;
+  color: white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover, button:focus,
+.btn:hover,
+.btn:focus {
+  background-color: #1a1a1a;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.card-shadow {
+  -webkit-box-shadow: 2px 2px 5px rgba(89, 89, 89, 0.3);
+          box-shadow: 2px 2px 5px rgba(89, 89, 89, 0.3);
+}
+
+.home .title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+}
+
+.home .title h1,
+.home .title h2,
+.home .title h3 {
+  text-shadow: 2px 3px 3px rgba(89, 89, 89, 0.7);
+}
+
+.couple .profile {
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr auto 1fr;
+      grid-template-rows: 1fr auto 1fr;
+  gap: 1rem;
+}
+
+.couple .profile-item span {
+  display: block;
+}
+
+.couple .profile-picture {
+  width: clamp(10rem, 60%, 20rem);
+  aspect-ratio: 1 / 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+.couple .profile-name {
+  font-weight: bold;
+  color: #ccaa00;
+}
+
+.event .schedules {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.event .schedules-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: 0.5rem;
+}
+
+.event .schedules-item span {
+  display: block;
+  margin: 0 auto;
+  width: clamp(1rem, 80%, 20rem);
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5em;
+}
+
+.event ol {
+  display: block;
+  width: clamp(10em, 50%, 30em);
+  margin: 0 auto;
+}
+
+.event ol li {
+  text-align: left;
+}
+
+.moment > p {
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+.navbar-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #595959;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  background-color: #e6e6e6;
+}
+
+.navbar-item.active {
+  background-color: #e6e6e6;
+}
+
+.navbar-item.active span {
+  text-decoration: underline;
+}
+
+.navbar-item span {
+  font-size: 0.75em;
+}
+
+.welcome-card {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #f2f2f2;
+  padding: 1rem;
+  text-align: center;
+  -webkit-animation: fadeOut 1s linear forwards;
+          animation: fadeOut 1s linear forwards;
+  z-index: 100;
+}
+
+.welcome-card.show {
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
+}
+
+.welcome-card__picture {
+  display: block;
+  margin: 1rem auto;
+  width: 10em;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.welcome-card span {
+  display: block;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.slideshow-picture {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: fadeOut 1s linear forwards;
+          animation: fadeOut 1s linear forwards;
+}
+
+.slideshow-picture.active {
+  -webkit-animation: fadeIn 1s linear forwards;
+          animation: fadeIn 1s linear forwards;
+}
+
+.schedules {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+.countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.countdown-item {
+  padding: 0.3em;
+}
+
+.countdown-item:first-child span:first-child {
+  font-size: 2.5em;
+  color: #d92626;
+}
+
+.countdown-item span {
+  display: block;
+}
+
+.countdown-item span:first-child {
+  font-size: 1.8em;
+}
+
+.maps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.maps-iframe {
+  width: clamp(20rem, 100%, 40rem);
+  margin-bottom: 1rem;
+}
+
+.react-photo-gallery--gallery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.quote-wish__wish-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  width: clamp(10rem, 80%, 30rem);
+  margin: 0 auto;
+}
+
+.quote-wish__wish-form .input-label {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  text-align: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.quote-wish__wish-form .input-label input,
+.quote-wish__wish-form .input-label textarea {
+  padding: 0.5rem 0.2rem;
+  margin-top: 0.2rem;
+}
+
+.quote-wish__wish-form .input-label textarea {
+  resize: vertical;
+}
+
+.wishes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: clamp(10rem, 80%, 30rem);
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: scroll;
+  max-height: 40rem;
+  gap: 0.5rem;
+  padding: 0.2rem;
+}
+
+.wishes-container .wish-card {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+      grid-template-areas: 'name button' 'wish button';
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.2rem;
+  padding-left: 0.5rem;
+  text-align: left;
+  background-color: white;
+}
+
+.wishes-container .wish-card__name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+  font-weight: bold;
+}
+
+.wishes-container .wish-card__text {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: wish;
+}
+
+.wishes-container .wish-card button {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: button;
+  height: 100%;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+/*# sourceMappingURL=style.css.map */
