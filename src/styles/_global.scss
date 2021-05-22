@@ -21,10 +21,72 @@ html,
 body {
   width: 100%;
   font-family: sans-serif;
+  position: relative;
+}
+
+.App {
+  background-image: linear-gradient(
+      to right,
+      rgba(white, 0.8),
+      rgba(white, 0.8)
+    ),
+    url('../assets/background.jpg');
+}
+
+.frame {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+img.corner {
+  position: absolute;
+  height: 8rem;
+  object-fit: contain;
+  z-index: 60;
+  max-width: 100%;
+
+  &[class*='top'] {
+    top: 0;
+  }
+
+  &.top {
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-left {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    &-right {
+      right: 0;
+      transform: translate(0);
+    }
+  }
+
+  &[class*='bottom'] {
+    bottom: 3rem;
+  }
+
+  &.bottom {
+    left: 50%;
+    transform: rotate(180deg) translateX(50%);
+
+    &-left {
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    &-right {
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
 }
 
 section {
-  background-color: $neutral-light;
   position: relative;
   color: $neutral-dark;
   padding: 5rem 1rem;
@@ -35,7 +97,7 @@ section {
     padding: 0;
   }
 
-  &::before {
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -54,8 +116,31 @@ section {
 }
 
 h4.italic {
-  font-family: 'Great Vibes', serif;
+  font-family: $great-vibes;
   font-size: 1.8em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $newsreader;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 1.8em;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 1.5em;
+}
+
+h3 {
+  font-weight: lighter;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 button,
@@ -79,6 +164,7 @@ button,
 .card {
   padding: 1rem;
   border-radius: 0.5rem;
+  background-color: $white;
 
   &-shadow {
     box-shadow: 2px 2px 5px rgba($mid-dark, 0.3);
@@ -133,36 +219,18 @@ button,
 
 // 3. EVENT
 .event {
-  .schedules {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 1rem;
-
-    &-item {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-auto-rows: auto;
-      gap: 0.5rem;
-
-      span {
-        display: block;
-        margin: 0 auto;
-        width: clamp(1rem, 80%, 20rem);
-        text-align: left;
-        display: flex;
-        gap: 0.5em;
-      }
-    }
-  }
-
-  ol {
-    display: block;
-    width: clamp(10em, 50%, 30em);
+  .policy {
+    max-width: 45rem;
     margin: 0 auto;
 
-    li {
-      text-align: left;
+    ol {
+      display: block;
+      width: clamp(13em, 50%, 30em);
+      margin: 0 auto;
+
+      li {
+        text-align: left;
+      }
     }
   }
 }

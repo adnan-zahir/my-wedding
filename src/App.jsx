@@ -2,6 +2,11 @@
 import { useEffect, useState } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 
+// Images
+import topLeftImg from './assets/top-left.png';
+import topImg from './assets/top.png';
+import topRightImg from './assets/top-right.png';
+
 // API
 import WeddingInvitationApi from './api/weddingInvitationApi';
 
@@ -83,7 +88,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="frame"></div>
+      <div className="frame">
+        <img src={topLeftImg} alt="Frame" className="corner top-left" />
+        <img src={topImg} alt="Frame" className="corner top" />
+        <img src={topRightImg} alt="Frame" className="corner top-right" />
+        <img src={topLeftImg} alt="Frame" className="corner bottom-right" />
+        <img src={topImg} alt="Frame" className="corner bottom" />
+        <img src={topRightImg} alt="Frame" className="corner bottom-left" />
+      </div>
       <HashRouter>
         <WelcomeCard
           guest={guestName}
