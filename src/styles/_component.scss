@@ -144,7 +144,7 @@
 .countdown {
   display: flex;
   margin: 1rem 0;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-evenly;
 
   &-item {

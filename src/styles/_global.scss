@@ -214,6 +214,12 @@ button,
       font-weight: bold;
       color: $primary-gold;
     }
+
+    .ampersand {
+      font-size: 4em;
+      color: $primary-gold;
+      font-family: $great-vibes;
+    }
   }
 }
 
@@ -239,5 +245,16 @@ button,
 .moment {
   > p {
     margin-bottom: 2rem;
+  }
+}
+
+// 5. QUOTE WISH
+.quote-wish {
+  &__quote {
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 30em;
+    }
   }
 }

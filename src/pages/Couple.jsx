@@ -30,7 +30,7 @@ const Couple = (props) => {
             Bapak {bride.father_name} dan Ibu {bride.mother_name}
           </span>
         </div>
-        <span>Dan</span>
+        <span className="ampersand">&</span>
         <div className="profile-item">
           <img
             src={groom.picture_url}

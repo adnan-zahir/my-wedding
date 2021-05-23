@@ -246,6 +246,12 @@ button:hover, button:focus,
   color: #ccaa00;
 }
 
+.couple .profile .ampersand {
+  font-size: 4em;
+  color: #ccaa00;
+  font-family: "Great Vibes", cursive;
+}
+
 .event .policy {
   max-width: 45rem;
   margin: 0 auto;
@@ -263,6 +269,12 @@ button:hover, button:focus,
 
 .moment > p {
   margin-bottom: 2rem;
+}
+
+.quote-wish__quote p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30em;
 }
 
 .navbar {
@@ -429,7 +441,7 @@ button:hover, button:focus,
   margin: 1rem 0;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: end;
+          align-items: flex-end;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;

@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 
 const WelcomeCard = (props) => {
   // Props
-  const { pictureUrl, guest } = props;
+  const {
+    pictureUrl,
+    // guest,
+  } = props;
 
   // Event Handler
   const clickHandler = () => {
@@ -21,7 +24,7 @@ const WelcomeCard = (props) => {
       <img className="welcome-card__picture" src={pictureUrl} alt="Welcome" />
       <span>Kepada Yth.</span>
       <span>Bapak/Ibu/Saudara/i</span>
-      <span>{guest}</span>
+      {/* <span>{guest}</span> */}
       <button onClick={clickHandler}>Buka Undangan</button>
     </div>
   );
@@ -29,12 +32,12 @@ const WelcomeCard = (props) => {
 
 WelcomeCard.propTypes = {
   pictureUrl: PropTypes.string,
-  guest: PropTypes.string,
+  // guest: PropTypes.string,
 };
 
 WelcomeCard.defaultProps = {
   pictureUrl: '',
-  guest: '',
+  // guest: '',
 };
 
 export default WelcomeCard;
