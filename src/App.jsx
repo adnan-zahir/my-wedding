@@ -7,6 +7,9 @@ import topLeftImg from './assets/top-left.png';
 import topImg from './assets/top.png';
 import topRightImg from './assets/top-right.png';
 
+// Audio
+import audioFile from './audio/bgm.mp3';
+
 // API
 import WeddingInvitationApi from './api/weddingInvitationApi';
 
@@ -20,6 +23,7 @@ import Event from './pages/Event';
 import Moment from './pages/Moment';
 import QuoteWish from './pages/QuoteWish';
 import WelcomeCard from './components/WelcomeCard';
+import Audio from './components/Audio';
 
 const App = () => {
   // States
@@ -101,6 +105,8 @@ const App = () => {
           guest={guestName}
           pictureUrl={DATA.welcome_card_picture_url}
         />
+
+        <Audio audioFile={audioFile} />
 
         <Route exact path="/">
           <Home
